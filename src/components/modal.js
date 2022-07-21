@@ -31,12 +31,17 @@ export default function ModalComponent({
                 arial-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Text in a modal
-                    </Typography>
-                    <Typography id="modal-modal-description" sx={{mt: 2}}>
-                        Douis Molis Et Unnam, Sanct Text in a modal. Commodo
-                    </Typography>
+                    <input
+                        placeholder="Add the Title"
+                        className="add-input"
+                    />
+                    <div className='button-container'>
+                        <button
+                            className='add-docs'
+                        >
+                            Add
+                        </button>
+                    </div>
                 </Box>
             </Modal>
         </div>
