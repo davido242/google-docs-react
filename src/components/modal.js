@@ -1,7 +1,5 @@
 import React from "react";
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
 const style = {
@@ -9,16 +7,19 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50% , -50%)',
-    width: '400',
+    width: 500,
+    height: 150,
     bgcolor: 'background.paper',
-    border: '2px solid #000',
     boxShadow: 24,
-    p: 4,
-}
+    p: 5,
+};
 
 export default function ModalComponent({
     open,
     setOpen,
+    title,
+    setTitle,
+    addData
 }) {
     const handleClose = () => setOpen(false);
 
@@ -34,10 +35,13 @@ export default function ModalComponent({
                     <input
                         placeholder="Add the Title"
                         className="add-input"
+                        onChange={(event) => setTitle(event.target.value)}
+                        value={title}
                     />
                     <div className='button-container'>
                         <button
                             className='add-docs'
+                            onClick={addData}
                         >
                             Add
                         </button>
